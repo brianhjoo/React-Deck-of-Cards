@@ -9,8 +9,8 @@
  *
  * App --> DeckOfCards --> Card
  */
-function Card({ imgUrl, code }) {
-  return <img src={imgUrl} alt={code} />
+function Card({ image, code }) {
+  return <img src={image} alt={code} />;
 }
 
 
