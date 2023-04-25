@@ -11,9 +11,10 @@ const DECK_CARDS_API_URL = "https://deckofcardsapi.com/api";
  *
  * State:
  *  - deck: deck of cards from API - { isLoaded, data, error }
+ * // TODO: ADD 2nd piece of state, update isloading
  *
  * Effects:
- *
+ * - fetchDeckWhenMounted
  *
  * App --> DeckOfCards --> Card
  * App --> DeckOfCards --> Button
@@ -30,7 +31,9 @@ function DeckOfCards() {
 
   console.debug("DeckOfCards ran, deck = ", deck);
 
+  // FIXME: add docstring
   useEffect(function fetchDeckWhenMounted() {
+    // FIXME: add docstring
     async function fetchDeck() {
       try {
         const response = await axios.get(`${DECK_CARDS_API_URL}/deck/new/`);
@@ -50,7 +53,7 @@ function DeckOfCards() {
     fetchDeck();
   }, []);
 
-
+// FIXME:ADD DOCSTRING -- add params into axios get
   async function drawCard() {
     const response = await axios.get(
       `${DECK_CARDS_API_URL}/deck/${deck.data.deck_id}/draw/?count=1`
